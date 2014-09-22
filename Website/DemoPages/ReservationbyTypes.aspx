@@ -34,8 +34,18 @@
             <asp:BoundField DataField="ReservationStatus" HeaderText="ReservationStatus" SortExpression="ReservationStatus" />
             <asp:BoundField DataField="Eventcode" HeaderText="Eventcode" SortExpression="Eventcode" />
         </Columns>
+        <EmptyDataTemplate>
+            No data available at this time
+        </EmptyDataTemplate>
         <PagerSettings FirstPageText="First" LastPageText="Last" Mode="NumericFirstLast" NextPageText="Next" PageButtonCount="6" PreviousPageText="Back" />
     </asp:GridView>
     <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="Reservation_List" TypeName="eRestaurantSystem.BLL.eRestaurantController"></asp:ObjectDataSource>
+    <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False" DataSourceID="ObjectDataSource1">
+        <Columns>
+            <asp:BoundField DataField="EventCode" HeaderText="EventCode" SortExpression="EventCode" />
+            <asp:BoundField DataField="Description" HeaderText="Description" SortExpression="Description" />
+            <asp:CheckBoxField DataField="Active" HeaderText="Active" SortExpression="Active" />
+        </Columns>
+    </asp:GridView>
 </asp:Content>
 
